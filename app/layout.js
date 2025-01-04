@@ -5,10 +5,9 @@ import {
   SignInButton,
   SignedIn,
   SignedOut,
-  UserButton,
 } from "@clerk/nextjs";
 
-import Provider from "./provider.jsx"; // Make sure this is your custom context provider or any necessary provider
+import Provider from "./provider.jsx"; // Your custom context provider
 
 const robo = Roboto({
   subsets: ["latin"],
@@ -24,30 +23,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <Provider>
-        <html lang="en">
-          <head>
-            <title>{metadata.title}</title>
-            <meta name="description" content={metadata.description} />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-          </head>
-          <body className={robo.className}>
-            <SignedIn>
-              {/* Show user content after sign-in */}
-              <div>{children}</div>
-            </SignedIn>
-            <SignedOut>
-              {/* Show sign-in button if user is not signed in */}
-              <div className="text-center py-10">
-                <h2 className="text-2xl font-semibold mb-4">
-                  You are not signed in.
-                </h2>
-                <SignInButton className="btn btn-primary">Sign In</SignInButton>
-              </div>
-            </SignedOut>
-          </body>
-        </html>
-      </Provider>
+      <html lang="en">
+        <head>
+          <title>{metadata.title}</title>
+          <meta name="description" content={metadata.description} />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </head>
+        <body className={robo.className}>
+          <Provider>
+              {/* Render content for signed-in users */}
+              {children}
+          </Provider>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }

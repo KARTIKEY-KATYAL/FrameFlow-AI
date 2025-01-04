@@ -5,6 +5,6 @@ export const USER_TABLE = pgTable("users", {
   name: varchar({ length: 255 }).notNull(),
   image: varchar(),
   email: varchar({ length: 255 }).notNull().unique(),
-  credits: varchar().default(10),
+  credits: integer().default(10),
 });
 
