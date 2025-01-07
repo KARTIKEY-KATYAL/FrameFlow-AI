@@ -1,5 +1,4 @@
 "use client";
-
 import { useUser } from "@clerk/nextjs"; // Clerk's hook for user info
 import axios from "axios";
 import React, { useState, useEffect } from "react";
@@ -9,7 +8,10 @@ import { VideoFrameContext } from "./_context/VideoFrameContext";
 function Provider({ children }) {
   const { user } = useUser(); // Get the user from Clerk
   const [UserDetail, setUserDetail] = useState(null); // Default to `null`
-  const [VideoFrames, setVideoFrames] = useState([]); // Initialize with empty array
+  const [VideoFrames, setVideoFrames] = useState({
+    totalDuration: 0,
+    FrameList: [],
+  }); // Initialize with empty array
 
   useEffect(() => {
     // Save user info when the user object changes
