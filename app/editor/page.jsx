@@ -21,7 +21,7 @@ function Editor() {
         {/* Layout Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
           {/* Track List Section */}
-          <div className="bg-green-50 p-6 h-96 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+          <div className="p-6 h-screen rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
             <h3 className="font-semibold text-lg text-gray-800 mb-4">
               Track List
             </h3>
@@ -30,7 +30,7 @@ function Editor() {
           </div>
 
           {/* Video Player Section */}
-          <div className="bg-green-50 p-6 h-96 col-span-3 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+          <div className="p-6 h-screen col-span-3 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
             <h3 className="font-semibold text-lg text-gray-800 mb-4">
               Video Player
             </h3>
@@ -39,7 +39,7 @@ function Editor() {
           </div>
 
           {/* Control Section */}
-          <div className="bg-green-50 p-6 h-96 col-span-2 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+          <div className="p-6 h-screen col-span-2 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
             <h3 className="font-semibold text-lg text-gray-800 mb-4">
               Control Section
             </h3>
